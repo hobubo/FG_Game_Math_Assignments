@@ -1,0 +1,19 @@
+{
+    "name": "EditorScripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a88fcd5543dcb0d4bab2029397f672e8",
+        "GUID:69448af7b92c7f342b298e06a37122aa"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        ""
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

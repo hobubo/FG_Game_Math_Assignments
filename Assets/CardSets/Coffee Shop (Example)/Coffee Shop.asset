@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03d3f7096433a54dbe837c24de46b53, type: 3}
+  m_Name: Coffee Shop
+  m_EditorClassIdentifier: 
+  <Cards>k__BackingField:
+  - {fileID: 11400000, guid: 2289e04e4ee4acf4abff59cf7359ba49, type: 2}
+  - {fileID: 11400000, guid: 82022f0236a9c6c40bbe573e4a544da6, type: 2}
+  - {fileID: 11400000, guid: 36cb7dc807ba54d418243ea51885da98, type: 2}
+  - {fileID: 11400000, guid: 36d0bd4bd5eeb594cb85bd8cf2f70125, type: 2}
+  - {fileID: 11400000, guid: 4a6460a56d0cc4d4c8e2a1958decb37c, type: 2}
+  - {fileID: 11400000, guid: fdccf02652b3fd04bb5e90ac92d84bea, type: 2}
+  - {fileID: 11400000, guid: b63e3855a3ad9a54ba30fc27fe05753b, type: 2}
+  - {fileID: 11400000, guid: 2fcaa649f3199444b8dabcf87447b49f, type: 2}
+  - {fileID: 11400000, guid: 44d19d9ec5fdb174cb49500c3f2ecff1, type: 2}
+  <DefaultDeck>k__BackingField:
+  - {fileID: 11400000, guid: 36d0bd4bd5eeb594cb85bd8cf2f70125, type: 2}
+  - {fileID: 11400000, guid: 2289e04e4ee4acf4abff59cf7359ba49, type: 2}
+  - {fileID: 11400000, guid: 82022f0236a9c6c40bbe573e4a544da6, type: 2}
+  - {fileID: 11400000, guid: 36cb7dc807ba54d418243ea51885da98, type: 2}
+  - {fileID: 11400000, guid: 44d19d9ec5fdb174cb49500c3f2ecff1, type: 2}
+  - {fileID: 11400000, guid: 4a6460a56d0cc4d4c8e2a1958decb37c, type: 2}
+  - {fileID: 11400000, guid: 44d19d9ec5fdb174cb49500c3f2ecff1, type: 2}

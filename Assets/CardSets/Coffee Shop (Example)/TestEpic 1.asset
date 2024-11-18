@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad5c2f0a0d652d4391d15d23924c3f3, type: 3}
+  m_Name: TestEpic 1
+  m_EditorClassIdentifier: 
+  _costType: {fileID: 11400000, guid: 077297821bc699b42b8f3e0e2d2892e3, type: 2}
+  _costAmount: 1
+  _image: {fileID: 465211807, guid: 1bbd07c327100584c88207f01e1dac85, type: 3}
+  _shopWeight: 1
+  _quality: {fileID: 11400000, guid: 69c9723336a97834d9f93a3dfa9f8875, type: 2}
+  _descriptions:
+  - Epic 1
+  - Epic 2
+  - Epic 3
