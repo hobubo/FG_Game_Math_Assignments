@@ -60,7 +60,7 @@ namespace FGMath
 				var rowIdx = Mathf.Floor(idx / cardsPerRow);
 				var colIdx = idx - (cardsPerRow * rowIdx);
 
-				var gridUnit = new Vector2(colIdx - (cardsPerRow - 1) / 2, - rowIdx - (cardsPerCol - 1) / 2);
+				var gridUnit = new Vector2(colIdx - (cardsPerRow - 1) / 2, - (rowIdx - (cardsPerCol - 1) / 2));
 				var gridPosition = new Vector3(gridUnit.x * card.x, 0, gridUnit.y * card.y);
 
 				return gridPosition;
