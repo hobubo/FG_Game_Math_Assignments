@@ -62,8 +62,8 @@ namespace FGMath
 			float c2 = c1 * 1.525f;
 
 			return t < 0.5
-				? (Mathf.Pow(2 * t, 2) * ((c2 + 1) * 2 * t - c2)) / 2
-				: (Mathf.Pow(2 * t - 2, 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2;
+				? ((2 * t) * (2 * t) * ((c2 + 1) * 2 * t - c2)) / 2
+				: ((2 * t - 2) * (2 * t - 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2;
 		}
 
     public static PseudoTransform MoveToDiscard(Input input)
