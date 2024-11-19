@@ -52,52 +52,32 @@ namespace FGMath
 
     }
 
+		private static Vector3 getGridPosition(int idx, Vector2 card, Vector2 area)
+		{
+				var cardsPerRow = Mathf.Floor(area.x / card.x);
+				var cardsPerCol = Mathf.Floor(area.y / card.y);
+
+				var rowIdx = Mathf.Floor(idx / cardsPerRow);
+				var colIdx = idx - (cardsPerRow * rowIdx);
+
+				var gridUnit = new Vector2(colIdx - (cardsPerRow - 1) / 2, - rowIdx - (cardsPerCol - 1) / 2);
+				var gridPosition = new Vector3(gridUnit.x * card.x, 0, gridUnit.y * card.y);
+
+				return gridPosition;
+		}
+
+
     public static PseudoTransform GetGridCellPosition(Input input)
     {
         PseudoTransform retVal;
+				
+				var origin = input.playAreaCenterPosition;
 
-				// I know it said fixed grid, but I tried solving it so the fixed grid can be scaled
-				// or get updated to another size. Don't know if that was intended or not.
-				// Hopefully the code is readable, and hopefully it does add margin and cenering
-				// dynamically as I set out to achive. And yes, I have a passion for ternary operators
+				var gridPosition = getGridPosition(input.gridCellIdx, input.cardDimensions, input.playAreaDimensions); 
 
-				// gets max amount of cards per row and column
-				var cardsPerRow = Mathf.Floor(input.playAreaDimensions.x / input.cardDimensions.x);
-				var cardsPerCol = Mathf.Floor(input.playAreaDimensions.y / input.cardDimensions.y);
+				var worldPosition = origin + (gridPosition.x * Vector3.right + gridPosition.z * Vector3.forward);
 
-				// calculates margin left to work with, the remainder of the play area
-				var marginSurplus = Vector2.zero;
-				marginSurplus.x = (input.playAreaDimensions.x % input.cardDimensions.x);
-				marginSurplus.y = (input.playAreaDimensions.y % input.cardDimensions.y);
-
-				// how thick the horizontal and vertical margin can be
-				var marginAround = Vector2.zero;
-				marginAround.x = marginSurplus.x / (cardsPerRow + 1); 
-				marginAround.y = marginSurplus.y / (cardsPerCol + 1); 
-
-				// gets row and column from cell index
-				var rowIdx = Mathf.Floor(input.gridCellIdx / cardsPerRow);
-				var colIdx = input.gridCellIdx - (cardsPerRow * rowIdx);
-
-				// local grid position
-				var grid = Vector2.zero;
-				grid.x = input.gridCellIdx < cardsPerRow ? input.gridCellIdx * input.cardDimensions.x : (input.gridCellIdx - cardsPerRow) * input.cardDimensions.x;
-				grid.y = input.gridCellIdx < cardsPerRow ? input.cardDimensions.y : 0;
-
-				// offset to center grid
-				var offset = Vector2.zero;
-				offset.x = cardsPerRow % 2 == 0 ? ((cardsPerRow - 2) / 2) * input.cardDimensions.x - input.cardDimensions.x / 2 : ((cardsPerRow - 1) / 2) * input.cardDimensions.x;
-				offset.y = cardsPerCol % 2 == 0 ? ((cardsPerCol - 2) / 2) * input.cardDimensions.y - input.cardDimensions.y / 2 : ((cardsPerCol - 1) / 2) * input.cardDimensions.y;
-
-				// margin around the cards to fill the play area completely
-				var margin = Vector2.zero;
-				margin.x = colIdx * marginAround.x - marginAround.x; 
-				margin.y = rowIdx * marginAround.y + marginAround.y;
-
-				// adds the grid, the offset, and the margin together to represent the final position of the card
-				var position = new Vector3(grid.x - offset.x + margin.x, 0, grid.y - offset.y - margin.y); 
-
-        retVal.pos = position;
+        retVal.pos = worldPosition;
 				retVal.rot = Quaternion.identity;
         retVal.scale = Vector3.one;
 
